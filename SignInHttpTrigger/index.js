@@ -1,10 +1,12 @@
 
-exports.helloHttp =  (context, req) => {
-  response = "This is a sample response from your webhook!"
+exports.signInProcess =  (context, req) => {
 
-  //"speech" is the spoken version of the response, "displayText" is the visual version
+  context.res = {
+    body: "!!!!!!!!!!"
+  };
 
-  context.log(process.version)
-  context.done(null, response)
+  context.log(process.version);
+  context.log(context.res.body);
+  context.done();
 
 };
