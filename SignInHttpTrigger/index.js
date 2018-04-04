@@ -1,8 +1,13 @@
 exports.signInProcess = (context, req) => {
 
+  resposne = "!!!!!!!!"
+  
   req ?
     context.res = {
-      "body": "!!!!!!!!!!"
+      "body": {
+        "speech": response, 
+        "displayText": response 
+      }
     } :
     context.log.error('Fuck!')
 
