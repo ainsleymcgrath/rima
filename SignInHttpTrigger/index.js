@@ -3,8 +3,8 @@ exports.signInProcess = (context, req) => {
   response = "!!!!!!!!"
 
   if (req) {
-    // data = JSON.parse(req.body)
-    context.log(req.body);
+    const intent = req.body.result.metadata['intentName']
+    context.log(intent)
     context.res
       .status(200)
       .json({
@@ -20,6 +20,5 @@ exports.signInProcess = (context, req) => {
 
   // context.log(process.version);
   // context.log(context.res.body);
-  // context.done();
 
 };
