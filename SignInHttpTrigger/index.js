@@ -1,9 +1,10 @@
+exports.signInProcess = (context, req) => {
 
-exports.signInProcess =  (context, req) => {
-
-  context.res = {
-    body: "!!!!!!!!!!"
-  };
+  req ?
+    context.res = {
+      "body": "!!!!!!!!!!"
+    } :
+    context.log.error('Fuck!')
 
   context.log(process.version);
   context.log(context.res.body);
