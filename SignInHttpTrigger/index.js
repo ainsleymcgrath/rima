@@ -3,8 +3,9 @@ exports.signInProcess = (context, req) => {
   response = "!!!!!!!!"
 
   if (req) {
-    const data = JSON.parse(req.body); //.result.metadata['intentName']
-    context.log(intent);
+    // const data = JSON.parse(req.body); //.result.metadata['intentName']
+    context.log(typeof req);
+    context.log(typeof req.body);
     context.res
       .status(200)
       .json({
