@@ -21,8 +21,8 @@ exports.signInProcess = (context, req) => {
     context.res
       .status(200)
       .json({
-        "speech": fulfill(intent),
-        "displayText": fulfill(intent)
+        "speech": fulfill(intent, req.result),
+        "displayText": fulfill(intent, req.result)
       });
 
   } else {
