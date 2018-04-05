@@ -5,7 +5,7 @@ exports.signInProcess = (context, req) => {
   if (req) {
     // const data = JSON.parse(req.body); //.result.metadata['intentName']
     context.log(Object.keys(req));
-    const intent = req.result.metadata.intentName
+    const intent = 'TestIntent' // req.result.metadata.intentName
 
     context.res
       .status(200)
