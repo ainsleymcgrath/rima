@@ -1,25 +1,26 @@
-exports.signInProcess = (context, req) => {
+const fulfillmentResponse = require('fulfillmentResponse')
 
-  response = "!!!!!!!!"
+exports.signInProcess = (context, req) => {
 
   if (req) {
     // const data = JSON.parse(req.body); //.result.metadata['intentName']
     context.log(Object.keys(req));
-    // context.log(typeof req.body);
+    const intent = req.result.metadata.intentName
+
     context.res
       .status(200)
       .json({
-        "speech": response,
-        "displayText": response
+        "speech": fulfillmentResponse(intent),
+        "displayText": fulfillmentResponse(intent)
       });
   } else {
     context.res
       .status(400)
-      .send("You suck, this is an error haha");
-    context.log.error('Fuck!');
+      .json({
+        "speech": `Some kind of error occured. Server stuff. Let's give this another shot?`,
+        "displayText": `Some kind of error occured. Server stuff. Let's give this another shot?`
+      })
+    context.log.error(`Error occurred for fulfillment of intent ${intent}`);
   }
-
-  // context.log(process.version);
-  // context.log(context.res.body);
 
 };
