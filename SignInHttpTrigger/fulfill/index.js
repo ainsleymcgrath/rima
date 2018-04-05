@@ -12,7 +12,7 @@ const fulfill = (intent, result) => {
       return `(With up so floating many bells down)`;
       break;
     case 'SignIn':
-      return `Awesome. You're signed in as ${parameters.given-name} with email address ${parameters.email}.`;
+      return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.`;
       break;
     default:
       return `Something seems to have gone wrong... Please, try again.`;
