@@ -1,4 +1,4 @@
-const fulfillmentResponse = require('fulfillmentResponse')
+const fulfillmentResponse = require('./fulfillmentResponse')
 
 exports.signInProcess = (context, req) => {
 
