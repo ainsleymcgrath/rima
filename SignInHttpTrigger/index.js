@@ -1,5 +1,4 @@
-const fulfillmentResponse = require('./fulfillmentResponse')
-
+const fulfill = require('./fulfill')
 exports.signInProcess = (context, req) => {
 
   if (req) {
@@ -10,8 +9,8 @@ exports.signInProcess = (context, req) => {
     context.res
       .status(200)
       .json({
-        "speech": fulfillmentResponse(intent),
-        "displayText": fulfillmentResponse(intent)
+        "speech": fulfill(intent),
+        "displayText": fulfill(intent)
       });
   } else {
     context.res
