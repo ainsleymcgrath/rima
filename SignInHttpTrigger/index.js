@@ -14,8 +14,8 @@ exports.signInProcess = (context, req) => {
     context.log(`
       Query: ${resolvedQuery}
       Action: ${action}
-      Params: ${JSON.stringify(parameters, null, 2)}
-      Contexts: ${JSON.stringify(contexts, null, 2)}
+      Params: ${JSON.stringify(parameters)}
+      Contexts: ${JSON.stringify(contexts)}
     `)
 
     context.res
