@@ -1,3 +1,4 @@
 .vscode/settings.json
 .vscode/
-**/node-modules/**
+./SignInHttpTrigger/node_modules/
+node_modules/
