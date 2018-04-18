@@ -15,7 +15,8 @@ const fulfill = (intent, result) => {
       //TODO: create a check for valid name, email
       //TODO: if `original` params are present in context, 
       //      prefer those in cases of invalid updates
-      return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.`;
+      return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.
+              Would you be okay with answering a few more questions?`;
       break;
     default:
       return `Something seems to have gone wrong... Please, try again.`;

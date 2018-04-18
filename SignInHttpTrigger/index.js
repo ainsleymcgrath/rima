@@ -1,6 +1,6 @@
 const fulfill = require('./fulfill')
 exports.signInProcess = (context, req) => {
-
+  context.log(process.env['AZURE_STORAGE_ACCOUNT_NAME'])
   if (req) {
 
     const intent = req.result.metadata.intentName
