@@ -7,7 +7,7 @@ const fulfill = (intent, obj) => {
     action,
     parameters,
     contexts
-  } = obj;
+  } = obj; // TODO: refactor obj as raw req rather than stupid results objs
 
   switch (intent) {
     case 'TestIntent':

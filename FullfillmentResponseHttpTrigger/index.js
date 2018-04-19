@@ -21,8 +21,8 @@ exports.signInProcess = (context, req) => {
     context.res
       .status(200)
       .json({
-        "speech": fulfill(intent, req.result),
-        "displayText": fulfill(intent, req.result)
+        "speech": fulfill(intent, req.result), // TODO: use raw req
+        "displayText": fulfill(intent, req.result) // TODO: use raw req
       });
 
   } else {

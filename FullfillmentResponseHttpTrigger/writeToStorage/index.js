@@ -7,7 +7,7 @@ const writeToStorage = (obj) => {
     parameters,
     contexts,
     metadata
-  } = obj;
+  } = obj; // TODO: refactor obj as raw req rather than stupid results obj
   const tableService = azure.createTableService(
     process.env['AZURE_STORAGE_ACCOUNT_NAME'],
     process.env['AZURE_ACCOUNT_KEY']);
