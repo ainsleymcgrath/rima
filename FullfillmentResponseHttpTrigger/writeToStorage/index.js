@@ -15,9 +15,9 @@ const writeToStorage = (obj) => {
 
   const entity = {
     PartitionKey: entGen.String('Test'),
-    RowKey: entGen.String(obj['id']),
-    Data: entGen.String(`${[obj['parameters'], obj['contexts'], obj['metadata']]}`)
-  }
+    RowKey: entGen.String('666'),
+    Data: entGen.String(JSON.stringify([parameters, contexts, metadata]))
+  };
 
   tableService.insertEntity('AdsfBotTableStorage', entity, (err) => err);
   
