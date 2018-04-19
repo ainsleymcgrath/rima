@@ -1,4 +1,4 @@
-const writeBlob = require('./writeBlob');
+const writeBlob = require('../writeBlob');
 const container = process.env['AZURE_STORAGE_CONTAINER_NAME'];
 
 const fulfill = (intent, result) => {
@@ -21,7 +21,7 @@ const fulfill = (intent, result) => {
       writeBlob(
         container, // always the same container
         {resolvedQuery, action, parameters, contexts}, // an object made of my favorite parts of the response
-        `${resolvedQuery + action + intent}` // TODO: this is a terrible name
+        `${resolvedQuery} ${action} ${intent}` // TODO: this is a terrible name
       )
       return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.
               Would you be okay with answering a few more questions?`;
