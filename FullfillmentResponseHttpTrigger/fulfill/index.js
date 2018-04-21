@@ -1,6 +1,6 @@
 const writeToStorage = require('../writeToStorage');
 
-const fulfill = (intent, obj) => {
+const fulfill = (intent, obj, context) => {
 
   const {
     resolvedQuery,
@@ -20,7 +20,7 @@ const fulfill = (intent, obj) => {
       //      prefer those in cases of invalid updates
     
       // context.log(`${blobService}, ${typeof blobService}`)
-      // writeToStorage(obj);
+      // writeToStorage(obj, context);
       
       return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.
               Would you be okay with answering a few more questions?`;
