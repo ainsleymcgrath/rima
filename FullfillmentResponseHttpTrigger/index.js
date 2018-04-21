@@ -2,7 +2,6 @@ const fulfill = require('./fulfill')
 
 exports.signInProcess = (context, req) => {
   if (req) {
-
     const intent = req.result.metadata.intentName
     const {
       resolvedQuery,
@@ -16,7 +15,7 @@ exports.signInProcess = (context, req) => {
       Action: ${action}
       Params: ${JSON.stringify(parameters)}
       Contexts: ${JSON.stringify(contexts)}
-    `)
+    `);
 
     context.res
       .status(200)
@@ -24,17 +23,14 @@ exports.signInProcess = (context, req) => {
         "speech": fulfill(intent, req.result), // TODO: use raw req
         "displayText": fulfill(intent, req.result) // TODO: use raw req
       });
-
   } else {
-
     context.res
       .status(400)
       .json({
         "speech": `Some kind of error occured. Server stuff. Let's give this another shot?`,
         "displayText": `Some kind of error occured. Server stuff. Let's give this another shot?`
-      })
-    context.log.error(`Error occurred for fulfillment of intent ${intent}`);
-    
+      });
+      
+    context.log.error(`Error occurred for fulfillment of intent ${intent}`); 
   }
-
 };
