@@ -2,12 +2,6 @@ const fulfill = require('./fulfill')
 
 exports.signInProcess = (context, req) => {
 
-  // context.log(tableBinding);
-  context.log(Object.getOwnPropertyNames (this))
-  context.log(Object.getOwnPropertyNames(context))
-  context.log(Object.keys(context.bindings))
-  context.log(context.bindings)
-
   if (req) {
     const intent = req.result.metadata.intentName
     const {

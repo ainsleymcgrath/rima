@@ -20,7 +20,7 @@ const fulfill = (intent, obj, context) => {
       //      prefer those in cases of invalid updates
     
       // context.log(`${blobService}, ${typeof blobService}`)
-      // writeToStorage(obj, context);
+      writeToStorage(obj, context);
       
       return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.
               Would you be okay with answering a few more questions?`;

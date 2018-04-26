@@ -7,11 +7,13 @@ const writeToStorage = (obj, context) => {
     metadata
   } = obj; // TODO: refactor obj as raw req rather than stupid results obj
   
-  // context.tableBinding.push({
-  //   PartitionKey: 'Test',
-  //   RowKey: '666',
-  //   Data: entGen.String(JSON.stringify([parameters, contexts, metadata]))
-  // });
+  context.bindings.tableBinding = [];
+
+  context.bindings.tableBinding.push({
+    PartitionKey: 'Test',
+    RowKey: '666',
+    Data: JSON.stringify([parameters, contexts, metadata])
+  });
   
 }
 
