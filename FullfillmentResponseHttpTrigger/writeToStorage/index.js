@@ -5,13 +5,13 @@ const writeToStorage = (obj, context) => {
     parameters,
     contexts,
     metadata
-  } = obj; // TODO: refactor obj as raw req rather than stupid results obj
+  } = obj.result; 
   
   context.bindings.tableBinding = [];
 
   context.bindings.tableBinding.push({
     PartitionKey: 'Test',
-    RowKey: '666',
+    RowKey: '777',
     Data: JSON.stringify([parameters, contexts, metadata])
   });
   

@@ -7,7 +7,7 @@ const fulfill = (intent, obj, context) => {
     action,
     parameters,
     contexts
-  } = obj; // TODO: refactor obj as raw req rather than stupid results objs
+  } = obj.result; 
 
   switch (intent) {
     case 'TestIntent':
@@ -16,7 +16,7 @@ const fulfill = (intent, obj, context) => {
 
     case 'SignIn':
       //TODO: create a check for valid name, email
-      //TODO: if `original` params are present in context, 
+      //      if `original` params are present in context, 
       //      prefer those in cases of invalid updates
     
       // context.log(`${blobService}, ${typeof blobService}`)
