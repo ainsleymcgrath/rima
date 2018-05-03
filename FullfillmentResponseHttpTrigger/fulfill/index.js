@@ -25,7 +25,7 @@ const fulfill = (intent, obj, context) => {
               Would you be okay with answering a few more questions?`;
       break;
 
-    case 'SignIn - Followup':
+    case 'SignIn - UserSaysYesToExtraQuestions':
       writeToStorage(obj, context);
       return `Thanks for that. You're helping make the (data) Science Fair even cooler!`
       break;
