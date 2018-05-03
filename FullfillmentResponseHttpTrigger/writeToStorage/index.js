@@ -10,9 +10,9 @@ const writeToStorage = (obj, context) => {
   context.bindings.tableBinding = [];
 
   context.bindings.tableBinding.push({
-    PartitionKey: 'Test',
-    RowKey: '777',
-    Data: JSON.stringify([parameters, contexts, metadata])
+    PartitionKey: JSON.stringify(metadata.intentName),
+    RowKey: JSON.stringify(obj.id),
+    Data: JSON.stringify(obj.result)
   });
   
 }

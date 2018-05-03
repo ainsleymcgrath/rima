@@ -22,7 +22,7 @@ const fulfill = (intent, obj, context) => {
       // context.log(`${blobService}, ${typeof blobService}`)
       writeToStorage(obj, context);
       
-      return `Awesome. You're signed in as ${parameters['given-name']} with email address ${parameters['email']}.
+      return `Awesome. You're signed in as ${parameters['name']} with email address ${parameters['email']}.
               Would you be okay with answering a few more questions?`;
       break;
 
