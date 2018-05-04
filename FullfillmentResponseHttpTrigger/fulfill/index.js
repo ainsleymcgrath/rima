@@ -3,8 +3,6 @@ const writeToStorage = require('../writeToStorage');
 const fulfill = (intent, obj, context) => {
 
   const {
-    resolvedQuery,
-    action,
     parameters,
     contexts
   } = obj.result; 
@@ -15,19 +13,15 @@ const fulfill = (intent, obj, context) => {
       break;
 
     case 'SignIn':
-      //TODO: create a check for valid name, email
-      //      if `original` params are present in context, 
-      //      prefer those in cases of invalid updates
-    
-      // context.log(`${blobService}, ${typeof blobService}`)
       writeToStorage(obj, context);
       return `Awesome. You're signed in as ${parameters['name']} with email address ${parameters['email']}.
               Would you be okay with answering a few more questions?`;
       break;
 
-    case 'SignIn - UserSaysYesToExtraQuestions':
+    case 'SignIn - UserSaysYesToExtraQuestions': 
+    case 'AnswerExtraQuestionsOutOfContext':
       writeToStorage(obj, context);
-      return `Thanks for that. You're helping make the (data) Science Fair even cooler!`
+      return `Thanks for that. You're helping make the (data) Science Fair even cooler!`;
       break;
 
     default:

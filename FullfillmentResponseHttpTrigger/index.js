@@ -4,19 +4,14 @@ exports.signInProcess = (context, req) => {
 
   if (req) {
     const intent = req.result.metadata.intentName
-    const {
-      resolvedQuery,
-      action,
-      parameters,
-      contexts
-    } = req.result
+    const { contexts } = req.result
 
-    context.log(`
-      Query: ${resolvedQuery}
-      Action: ${action}
-      Params: ${JSON.stringify(parameters)}
-      Contexts: ${JSON.stringify(contexts)}
-    `);
+    // context.log(`
+    //   Query: ${resolvedQuery}
+    //   Action: ${action}
+    //   Params: ${JSON.stringify(parameters)}
+    //   Contexts: ${JSON.stringify(contexts)}
+    // `);
 
     context.res
       .status(200)
