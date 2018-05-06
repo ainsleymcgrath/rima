@@ -4,15 +4,10 @@ exports.signInProcess = (context, req) => {
 
   if (req) {
     const intent = req.result.metadata.intentName
-    const { contexts } = req.result
-
-    // context.log(`
-    //   Query: ${resolvedQuery}
-    //   Action: ${action}
-    //   Params: ${JSON.stringify(parameters)}
-    //   Contexts: ${JSON.stringify(contexts)}
-    // `);
-
+    const {
+      contexts
+    } = req.result
+    
     context.res
       .status(200)
       .json({
@@ -27,6 +22,6 @@ exports.signInProcess = (context, req) => {
         "displayText": `Some kind of error occured. Server stuff. Let's give this another shot?`
       });
 
-    context.log.error(`Error occurred for fulfillment of intent ${intent}`); 
+    context.log.error(`Error occurred for fulfillment of intent ${intent}`);
   }
 };

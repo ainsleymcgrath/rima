@@ -5,7 +5,7 @@ const fulfill = (intent, obj, context) => {
   const {
     parameters,
     contexts
-  } = obj.result; 
+  } = obj.result;
 
   switch (intent) {
     case 'TestIntent':
@@ -18,15 +18,14 @@ const fulfill = (intent, obj, context) => {
               Would you be okay with answering a few more questions?`;
       break;
 
-    case 'SignIn - UserSaysYesToExtraQuestions': 
+    case 'SignIn - UserSaysYesToExtraQuestions':
     case 'AnswerExtraQuestionsOutOfContext':
       writeToStorage(obj, context);
       return `Thanks for that. You're helping make the (data) Science Fair even cooler!`;
       break;
 
-    default:
-      return `Something seems to have gone wrong... Please, try again.`;
-      break;
+    case 'VisitIoTea':
+      return `Congratulations, ${parameters['CodeName']}! You just earned 100 points.`
   }
 
 };
