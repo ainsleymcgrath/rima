@@ -11,10 +11,12 @@ const fulfill = (intent, obj, context) => {
   // each intent. Handles the game and signin. Another module
   // handles intents that have non-plaintext payloads.
   switch (intent) {
+    // Thanks, E.E. Cummings
     case 'TestIntent':
       return `(With up so floating many bells down)`;
       break;
-
+    
+    // Aptitive booths
     case 'VisitIoTea':
       return `Congratulations, ${parameters['CodeName']}! You just earned 100 points.`
 
@@ -23,49 +25,51 @@ const fulfill = (intent, obj, context) => {
       break;
 
     case 'VisitRima':
-      return `${parameters['CodeName']}`;
+      return `Good job! That's 100 points for you,${parameters['CodeName']}.`;
       break;
 
     case 'VisitSnakes':
-      return `${parameters['CodeName']}`;
+      return `Way to go, ${parameters['CodeName']}! 100 points for you!`;
       break;
 
     case 'VisitPlumbing':
-      return `${parameters['CodeName']}`;
+      return `Wow. You figured out the puzzle. 100 points for ${parameters['CodeName']}!`;
       break;
 
     case 'VisitScoreboard':
-      return `${parameters['CodeName']}`;
+      return `Excellent work, ${parameters['CodeName']}. That's 100 points coming your way.`;
       break;
 
+    // Partner booths
     case 'VisitPinnacle':
-      return `${parameters['CodeName']}`;
+      return `OMG! You just earned 250 points, ${parameters['CodeName']}!`;
       break;
 
     case 'VisitBigSquid':
-      return `${parameters['CodeName']}`;
+      return `Holy cow, you're good at this game, ${parameters['CodeName']}. Here, have 250 points.`;
       break;
 
     case 'VisitAttunity':
-      return `${parameters['CodeName']}`;
+      return `You just earned yourself 250 points, ${parameters['CodeName']}.`;
       break;
 
     case 'VisitLooker':
-      return `${parameters['CodeName']}`;
+      return `Is that you, ${parameters['CodeName']}? You look like you need 250 points.`;
       break;
 
     case 'VisitMicrosoft':
-      return `${parameters['CodeName']}`;
+      return `WOOHOO! You got the big one! ONE THOUSAND POINTS for${parameters['CodeName']}!!!`;
       break;
 
     case 'VisitFivetran':
-      return `${parameters['CodeName']}`;
+      return `You're certainly making your way around the science fair! 250 points for you, ${parameters['CodeName']}.`;
       break;
 
     case 'VisitSnowflake':
-      return `${parameters['CodeName']}`;
+      return `Impressive work, ${parameters['CodeName']}. Have 250 points.`;
       break;
 
+    // Survey questionsf or Analytics
     case 'AnswerFavoriteColorQuestion':
       return `${parameters['CodeName']}`;
       break;
