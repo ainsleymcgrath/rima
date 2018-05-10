@@ -16,7 +16,7 @@ const fulfill = (intent, obj, context) => {
       return `(With up so floating many bells down)`;
       break;
     
-    // Aptitive booths
+    // Earn points at Aptitive booths
     case 'VisitIoTea':
       return `Congratulations, ${parameters['CodeName']}! You just earned 100 points.`
 
@@ -40,7 +40,7 @@ const fulfill = (intent, obj, context) => {
       return `Excellent work, ${parameters['CodeName']}. That's 100 points coming your way.`;
       break;
 
-    // Partner booths
+    // Earn points at Partner booths
     case 'VisitPinnacle':
       return `OMG! You just earned 250 points, ${parameters['CodeName']}!`;
       break;
@@ -58,7 +58,7 @@ const fulfill = (intent, obj, context) => {
       break;
 
     case 'VisitMicrosoft':
-      return `WOOHOO! You got the big one! ONE THOUSAND POINTS for${parameters['CodeName']}!!!`;
+      return `WOOHOO! You got the big one! ONE THOUSAND POINTS for ${parameters['CodeName']}!!!`;
       break;
 
     case 'VisitFivetran':
@@ -86,6 +86,7 @@ const fulfill = (intent, obj, context) => {
       return `${parameters['CodeName']}`;
       break;
 
+    // Learn about the booths
   }
 
 };
