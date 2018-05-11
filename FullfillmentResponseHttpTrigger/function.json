@@ -17,6 +17,13 @@
       "tableName": "adsfBotStorageTable",
       "connection": "dsfstorage_STORAGE",
       "direction": "out"
+    },
+    {
+      "type": "blob",
+      "name": "blobBinding",
+      "path": "bhostbot/{rand-guid}",
+      "connection": "sadsfmainprod_STORAGE",
+      "direction": "out"
     }
   ],
   "disabled": false
