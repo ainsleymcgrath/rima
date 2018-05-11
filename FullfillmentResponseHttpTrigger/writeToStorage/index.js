@@ -11,7 +11,6 @@ const writeToStorage = (obj, context) => {
     "points": "100"
   }
 
-  context.done();
 }
 
 module.exports = writeToStorage;
