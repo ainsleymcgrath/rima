@@ -18,7 +18,8 @@ const fulfill = (intent, obj, context) => {
     
     // Earn points at Aptitive booths
     case 'VisitIoTea':
-      return `Congratulations, ${parameters['CodeName']}! You just earned 100 points.`
+      writeToStorage(obj, context);
+      return `Congratulations, ${parameters['CodeName']}! You just earned 100 points.`;
 
     case 'VisitRobotRace':
       return `Well played, human. 100 points for ${parameters['CodeName']}!`;
