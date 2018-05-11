@@ -21,7 +21,7 @@
     {
       "type": "blob",
       "name": "blobBinding",
-      "path": "bhostbot/{rand-guid}",
+      "path": "bhostbot/{rand-guid}.json",
       "connection": "sadsfmainprod_STORAGE",
       "direction": "out"
     }

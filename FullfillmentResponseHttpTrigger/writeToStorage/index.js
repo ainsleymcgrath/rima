@@ -5,11 +5,11 @@ const writeToStorage = (obj, context) => {
   } = obj.result;
   // TODO: change to blob storage
 
-  context.bindings.blobBinding = {
+  context.bindings.blobBinding = JSON.stringify({
     "codename": `${parameters['CodeName']}`,
     "intent": `${metadata['intentName']}`,
     "points": "100"
-  }
+  });
 
 }
 
