@@ -1,15 +1,16 @@
-const writeToStorage = (obj, context) => {
+const intentLookup = require('./intents');
+
+module.exports = (obj, context) => {
+
   const {
     parameters,
     metadata
   } = obj.result;
-  // TODO: change to blob storage
   
   contex.log(`Writing the following to storage:
   codename: ${parameters['CodeName']}
   intent: ${metadata['intentName']}
-  points: TBD`);
-
+  points: ${intentLookup['intentName'].points}`);
 
   context.bindings.blobBinding = JSON.stringify({
     "codename": `${parameters['CodeName']}`,
@@ -17,7 +18,4 @@ const writeToStorage = (obj, context) => {
     "points": "100",
     "surveyAnswer": `${ parameters['FavoriteColorValue'] ? parameters['FavoriteColorValue'] : "" }` 
   });
-
 }
-
-module.exports = writeToStorage;

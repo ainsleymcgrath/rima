@@ -1,7 +1,6 @@
 const fulfill = require('./fulfill')
 
-exports.signInProcess = (context, req) => {
-
+module.exports = (context, req) => {
   if (req) {
     const intent = req.result.metadata.intentName
     const {
