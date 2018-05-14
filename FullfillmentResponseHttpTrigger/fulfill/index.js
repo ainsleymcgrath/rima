@@ -1,19 +1,24 @@
 const writeToStorage = require('../writeToStorage');
-const intentLookup = require('./intents');
+const intentLookup = require('../intentLookup');
 
-module.exports = (intent, obj, context) => {
+const fulfill = (intent, obj, context) => {
   const {
     parameters,
     contexts
   } = obj.result;
 
+  context.log(
+    `Intent: ${intent}\nParameters: ${JSON.stringify(parameters)}`);
+    
   if (intentLookup[intent]) {
     writeToStorage(obj, context);
     return intentLookup[intent].response(`${parameters['CodeName']}`);
   } else {
-    return 'god damnit!!!'
+    return 'I think you messed up'
   }
+};
 
+module.exports = fulfill;
 
   // Used as a lookup to get the correct text response for 
   // each intent. Handles the game and signin. Another module
@@ -99,6 +104,3 @@ module.exports = (intent, obj, context) => {
   // Learn about the booths
   // }
 
-};
-
-module.exports = fulfill;

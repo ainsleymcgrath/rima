@@ -1,4 +1,4 @@
-module.exports = {
+const intentLookup = {
   "TestIntent": {
     "response": () => "(With up so floating many bells down)"
   },
@@ -12,7 +12,7 @@ module.exports = {
   },
   "VisitRima": {
     "points": 100,
-    "response": (codename, answer) => `Good job! That's 100 points for you,${codename}.`
+    "response": (codename, answer) => `Good job! That's 100 points for you, ${codename}.`
   },
   "VisitSnakes": {
     "points": 100,
@@ -71,3 +71,5 @@ module.exports = {
     "response": (codename, answer) => `Thanks for sharing, but never forget: Age is only a number, ${codename}.`
   },
 }
+
+module.exports =  intentLookup

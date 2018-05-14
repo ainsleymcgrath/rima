@@ -1,16 +1,17 @@
-const intentLookup = require('../fulfill/intents');
+const intentLookup = require('../intentLookup');
 
-module.exports = (obj, context) => {
+const writeToStorage = (obj, context) => {
 
   const {
     parameters,
     metadata
   } = obj.result;
   
-  contex.log(`Writing the following to storage:
-  codename: ${parameters['CodeName']}
-  intent: ${metadata['intentName']}
-  points: ${intentLookup['intentName'].points}`);
+  context.log(
+    `Writing the following to storage:
+    codename: ${parameters['CodeName']}
+    intent: ${metadata['intentName']}
+    points: ${intentLookup[metadata['intentName']].points}`);
 
   context.bindings.blobBinding = JSON.stringify({
     "codename": `${parameters['CodeName']}`,
@@ -19,3 +20,5 @@ module.exports = (obj, context) => {
     "surveyAnswer": `${ parameters['FavoriteColorValue'] ? parameters['FavoriteColorValue'] : "" }` 
   });
 }
+
+module.exports = writeToStorage;
