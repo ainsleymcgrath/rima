@@ -1,4 +1,4 @@
-const intentLookup = require('./intents');
+const intentLookup = require('../fulfill/intents');
 
 module.exports = (obj, context) => {
 
