@@ -12,7 +12,7 @@ const fulfill = (intent, obj, context) => {
   if (intentLookup[intent]) {
     writeToStorage(obj, context);
     // check valid codename before responding
-    return codeNames.includes(parameters['CodeName']) ?
+    return codeNames.map(n => n.toLowerCase()).includes(parameters['CodeName'].toLowerCase()) ?
       intentLookup[intent].response(parameters['CodeName'], parameters['Answer']) 
       : `That's not a real codename. I don't think I'll trust you until you try again. No funny business this time.`
   } else {
