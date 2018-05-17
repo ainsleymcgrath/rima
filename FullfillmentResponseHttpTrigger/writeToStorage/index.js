@@ -16,7 +16,7 @@ const writeToStorage = (obj, context) => {
     codename: `${ parameters['CodeName'] ? parameters['CodeName'] : "" }`,
     intent: `${metadata['intentName']}`,
     points: `${intentLookup[metadata['intentName']].points}`,
-    surveyAnswer: `${ parameters['FavoriteColorValue'] ? parameters['FavoriteColorValue'] : "" }` 
+    surveyAnswer: `${ parameters['Answer'] ? parameters['Answer'] : "" }` 
   });
 };
 

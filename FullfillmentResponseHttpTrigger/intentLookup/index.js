@@ -33,7 +33,7 @@ const intentLookup = {
   },
   VisitPinnacle: {
     points: 250,
-    response: (codename, answer) => `OMG! You just earned 250 points, ${codename}!`
+    response: (codename, answer) => `${codename}!`
   },
   VisitBigSquid: {
     points: 250,
@@ -85,7 +85,7 @@ const intentLookup = {
     response: () => `Paper is wasteful. Brochures are boring. Modern cloud toolkits make it easy to create intelligent conversational agents, like me! Stop by the booth to learn about my brain.`
   },
   TellAboutSnakes: {
-    response: () => ``
+    response: () => `We used Airflow to pipe data from ReST APIs to Blob storage, transforming unstructured data into insightful visualizations. Airflow has few opinions on how you implement your pipelines, however the philosophy behind the tool is quite unique.`
   },
   TellAboutPlumbing: {
     response: () => `Take a look under the hood at how data ties everything together. Data architecture is the core of everything we do at Aptitive and the glue that holds all of the (data) Science Fair projects together.`
@@ -106,7 +106,7 @@ const intentLookup = {
     response: () => `Business intelligence, big data analytics, or a 360 view of your customers. Whatever you need, Looker can help.`
   },
   TellAboutMicrosoft: {
-    response: () => ``
+    response: () => `Microsoft!!!!!!`
   },
   TellAboutFivetran: {
     response: () => `Analyzing your organization's data is essential for growing your business. Fivetran makes this easy by connecting your applications, databases and more to a central data warehouse.`

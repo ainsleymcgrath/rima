@@ -3,9 +3,6 @@ const fulfill = require('./fulfill')
 module.exports = (context, req) => {
   if (req) {
     const intent = req.result.metadata.intentName
-    const {
-      contexts
-    } = req.result;
     
     context.res
       .status(200)
