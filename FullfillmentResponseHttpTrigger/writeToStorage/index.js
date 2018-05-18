@@ -8,15 +8,15 @@ const writeToStorage = (obj, context) => {
   
   context.log(
     `Writing the following to storage:
-    codename: ${parameters['CodeName']}
-    intent: ${metadata['intentName']}
-    points: ${intentLookup[metadata['intentName']].points}
-    surveyAnswer: ${ parameters['Answer'] ? parameters['Answer'] : "n/a"}`);
+    codename: ${ parameters['CodeName'] }
+    intent: ${ metadata['intentName'] }
+    points: ${ intentLookup[metadata['intentName']].points }
+    surveyAnswer: ${ parameters['Answer'] ? parameters['Answer'] : "n/a" }`);
 
   context.bindings.blobBinding = JSON.stringify({
     codename: `${ parameters['CodeName'] ? parameters['CodeName'] : "" }`,
-    intent: `${metadata['intentName']}`,
-    points: `${intentLookup[metadata['intentName']].points}`,
+    intent: `${ metadata['intentName'] }`,
+    points: `${ intentLookup[metadata['intentName']].points ? intentLookup[metadata['intentName']].points : 0 }`,
     surveyAnswer: `${ parameters['Answer'] ? parameters['Answer'] : "" }` 
   });
 };
