@@ -12,7 +12,7 @@ const writeToStorage = (obj, context) => {
     intent: ${ metadata['intentName'] }
     points: ${ intentLookup[metadata['intentName']].points }
     surveyAnswer: ${ parameters['Answer'] ? parameters['Answer'] : "n/a" }`);
-
+  
   context.bindings.blobBinding = JSON.stringify({
     codename: `${ parameters['CodeName'] ? parameters['CodeName'] : "" }`,
     intent: `${ metadata['intentName'] }`,
