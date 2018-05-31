@@ -7,6 +7,11 @@ const fulfill = (intent, obj, context) => {
 
   context.log(`Intent: ${intent}\nParameters: ${JSON.stringify(parameters)}`);
 
+  if (intent.includes('SignIn')) {
+    writeToStorage(obj, context);
+    return `Thanks very much! If you'd like help with anything else, just say hi and I'll tell you what's what.`;
+  }
+
   // call a function to generate the response corresponding to the current intent.
   // decide whether or not that intent needs to be written to storage
   if (intentLookup[intent]) {
