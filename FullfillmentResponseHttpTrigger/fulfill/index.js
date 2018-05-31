@@ -10,8 +10,8 @@ const fulfill = (intent, obj, context) => {
   // call a function to generate the response corresponding to the current intent.
   // decide whether or not that intent needs to be written to storage
   if (intentLookup[intent]) {
-    // only write non TellAbout intents to storage
-    if (!intent.includes('TellAbout')) {
+    // only write Visit and Answer intents to storage
+    if (intent.includes('Visit') || intent.includes('Answer')) {
       writeToStorage(obj, context);
     }
 
