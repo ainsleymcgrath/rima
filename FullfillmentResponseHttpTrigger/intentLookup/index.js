@@ -63,6 +63,10 @@ const intentLookup = {
     points: 250,
     response: (codename, answer) => `Impressive work, ${codename}. Have 250 points.`
   },
+  VisitAlooma: {
+    points: 250,
+    response: (codename, answer) => `Thank you, ${codename}. 250 points for your engagement.`
+  },
   AnswerFavoriteColorQuestion: {
     points: 500,
     response: (codename, answer) => `Thanks for the input, ${codename}. ${answer} is a great favorite color.`

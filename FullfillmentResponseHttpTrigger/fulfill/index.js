@@ -21,6 +21,7 @@ const fulfill = (intent, obj, context) => {
     }
 
     if (parameters['CodeName']) {
+      // conditional return     
       return codeNames.map(n => n.toLowerCase()).includes(parameters['CodeName'].toLowerCase()) ?
         // if valid codename....
         intentLookup[intent].response(parameters['CodeName'], parameters['Answer'])
