@@ -1,5 +1,4 @@
-// a lovely nested json for generating relevant responses
-// for the Visit, Answer, and TellAbout intents
+// lookup for for the Visit, Answer, and TellAbout intents
 // -- outermost keys are intent names.
 // -- values contain either a response() function for... 
 // -- ...filling out templates or a point value or both
